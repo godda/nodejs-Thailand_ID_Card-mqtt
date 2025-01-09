@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-thailand_id_card-mqtt",
+  "version": "0.0.1",
+  "description": "This project provides a Node.js-based implementation for reading data from Thailand ID Card (smart cards) and sending the data via MQTT in JSON format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "ccid",
+    "mqtt"
+  ],
+  "author": "Chawanwit Poolsri (godda.binahead@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "iconv": "^3.0.1",
+    "legacy-encoding": "^3.0.0",
+    "mqtt": "^5.10.3",
+    "pcsclite": "^1.0.1",
+    "smartcard": "^1.0.46"
+  }
+}

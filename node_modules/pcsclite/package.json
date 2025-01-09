@@ -1,0 +1,37 @@
+{
+    "name": "pcsclite",
+    "version": "1.0.1",
+    "engines": {
+        "node": ">=4.8.0"
+    },
+    "description": "Bindings over PC/SC to access Smart Cards",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "dependencies": {
+        "bindings": "^1.1.0",
+        "nan": "^2.14.0"
+    },
+    "devDependencies": {
+        "mocha": "~1.11.0",
+        "sinon": "~1.3.4",
+        "should": "~1.2.2"
+    },
+    "scripts": {
+        "test": "mocha",
+        "install": "node-gyp rebuild"
+    },
+    "repository": "https://github.com/santigimeno/node-pcsclite.git",
+    "keywords": [
+        "pcsc",
+        "pcsclite",
+        "smartcards"
+    ],
+    "author": "Santiago Gimeno <santiago.gimeno@gmail.com>",
+    "license": {
+        "type": "ISC",
+        "url": "https://github.com/santigimeno/node-pcsclite/blob/master/LICENSE"
+    },
+    "gypfile": true
+}
