@@ -53,9 +53,14 @@ const readCid = async (card) => {
     const response = await executeCommand(card, [0x00, 0xc0, 0x00, 0x00, 0x0d]);
     CID = response.slice(0, -2).toString();
     console.log(`CID [${CID.length}]: ${CID}`);
-    return CID;
+    if (CID.length != 13) {
+      process.exit();
+    } else {
+      return CID;
+    }
   } catch (error) {
     console.error("Error reading CID:", error);
+    process.exit();
   }
 };
 
@@ -68,6 +73,7 @@ const readFullnameTH = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading fullname:", error);
+    process.exit();
   }
 };
 const readFullnameEN = async (card) => {
@@ -79,6 +85,7 @@ const readFullnameEN = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading fullname:", error);
+    process.exit();
   }
 };
 const readDateofBirth = async (card) => {
@@ -90,6 +97,7 @@ const readDateofBirth = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading Date of Birth:", error);
+    process.exit();
   }
 };
 
@@ -102,6 +110,7 @@ const readGender = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading Gender:", error);
+    process.exit();
   }
 };
 const readCardIssuer = async (card) => {
@@ -113,6 +122,7 @@ const readCardIssuer = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading Card Issuer:", error);
+    process.exit();
   }
 };
 const readIssueDate = async (card) => {
@@ -124,6 +134,7 @@ const readIssueDate = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading Issue Date:", error);
+    process.exit();
   }
 };
 const readExpireDate = async (card) => {
@@ -135,6 +146,7 @@ const readExpireDate = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading Expire Date:", error);
+    process.exit();
   }
 };
 
@@ -147,6 +159,7 @@ const readAddress = async (card) => {
     return data;
   } catch (error) {
     console.error("Error reading Address:", error);
+    process.exit();
   }
 };
 
@@ -174,6 +187,7 @@ const readImageOneLine = async (card) => {
     return imgTemp;
   } catch (error) {
     console.error("Error reading image:", error);
+    process.exit();
   }
 };
 
@@ -216,6 +230,7 @@ devices.on("device-activated", (event) => {
       publishData(process.env.MQTT_TOPIC, data);
     } catch (error) {
       console.error("Error processing card:", error);
+      process.exit();
     }
   });
 
